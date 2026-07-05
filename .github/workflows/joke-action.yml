@@ -24,3 +24,5 @@ jobs:
             });
         env:
           JOKE: ${{ steps.joke.outputs.joke }}
+
+# Joke Action workflow trigger
