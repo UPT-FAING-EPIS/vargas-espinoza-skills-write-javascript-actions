@@ -1,0 +1,26 @@
+name: Joke Action
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+
+jobs:
+  joke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - id: joke
+        uses: ./
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `Joke: ${process.env.JOKE}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number || 1,
+              body
+            });
+        env:
+          JOKE: ${{ steps.joke.outputs.joke }}

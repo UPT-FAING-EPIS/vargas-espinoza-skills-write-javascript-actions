@@ -1,0 +1,8 @@
+name: Joke Action
+description: Return a joke as an action output.
+runs:
+  using: node20
+  main: dist/index.js
+outputs:
+  joke:
+    description: The generated joke.

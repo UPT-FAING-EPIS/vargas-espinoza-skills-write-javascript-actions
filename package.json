@@ -1,0 +1,17 @@
+{
+  "name": "joke-action",
+  "version": "1.0.0",
+  "description": "A JavaScript action that returns a joke",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/main.js -o dist"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3"
+  }
+}
