@@ -6,3 +6,5 @@ runs:
 outputs:
   joke:
     description: The generated joke.
+
+# outputs include joke
